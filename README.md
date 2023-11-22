@@ -14,3 +14,4 @@ To reformat code, run the script:
 
 `bash reformat_all_code.sh`
 
+Run this command before pushing any code changes. If formatting is not applied, builds will fail.
