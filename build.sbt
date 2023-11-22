@@ -5,9 +5,7 @@ val scalaV  = scala2V
 val munitTest      = "org.scalameta" %% "munit" % "0.7.29" % Test
 def munitFramework = new TestFramework("munit.Framework")
 
-
-val assertVerboseTest = "com.eed3si9n.expecty" %% "expecty"       % "0.16.0" % Test
-
+val assertVerboseTest = "com.eed3si9n.expecty" %% "expecty" % "0.16.0" % Test
 
 lazy val root = (project in file("."))
   .settings(scalaVersion := scalaV, crossScalaVersions := Seq(scalaV), name := "sofp-solutions-root")
@@ -21,10 +19,7 @@ lazy val chapter01 = (project in file("chapter01"))
     Test / fork              := false,
     scalafmtFailOnErrors     := false,
     testFrameworks += munitFramework,
-    libraryDependencies ++= Seq(
-      munitTest,
-      assertVerboseTest,
-    ),
+    libraryDependencies ++= Seq(munitTest, assertVerboseTest),
   ).dependsOn(common)
 
 lazy val chapter02 = (project in file("chapter02"))
@@ -35,22 +30,15 @@ lazy val chapter02 = (project in file("chapter02"))
     Test / fork              := false,
     scalafmtFailOnErrors     := false,
     testFrameworks += munitFramework,
-    libraryDependencies ++= Seq(
-      munitTest,
-      assertVerboseTest,
-    ),
+    libraryDependencies ++= Seq(munitTest, assertVerboseTest),
   ).dependsOn(common)
 
-lazy val common = (project in file("common"))
-  .settings(
-    scalaVersion             := scalaV,
-    crossScalaVersions       := Seq(scala2V, scala3V),
-    Test / parallelExecution := true,
-    Test / fork              := false,
-    scalafmtFailOnErrors     := false,
-    testFrameworks += munitFramework,
-    libraryDependencies ++= Seq(
-      munitTest,
-      assertVerboseTest,
-    ),
-  )
+lazy val common = (project in file("common")).settings(
+  scalaVersion             := scalaV,
+  crossScalaVersions       := Seq(scala2V, scala3V),
+  Test / parallelExecution := true,
+  Test / fork              := false,
+  scalafmtFailOnErrors     := false,
+  testFrameworks += munitFramework,
+  libraryDependencies ++= Seq(munitTest, assertVerboseTest),
+)
