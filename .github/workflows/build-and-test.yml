@@ -55,6 +55,6 @@ jobs:
           java-package: jdk
           java-version: '17'
       - run: sbt scalafmtCheckAll scalafmtSbtCheck
-name: scall_build_and_test
+name: build_and_test
 on:
   push: {}
