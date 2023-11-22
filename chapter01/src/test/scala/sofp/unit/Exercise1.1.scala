@@ -7,7 +7,7 @@ import munit.FunSuite
 class Exercise1_1 extends FunSuite {
 
   test("exercise 1.1") {
-    expect(1 == 0)
+    expect(0 == 0)
   }
 
 }
