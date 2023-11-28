@@ -2,8 +2,8 @@
 
 /** 
 Exercise 2.1.7.1
-Find all pairs i, j within (0, 1, ..., 9) such that i + 4 ∗ j > i ∗ j.
-Hint: use flatMap and filter.
+  Find all integer pairs 𝑖, 𝑗 where 0 ≤ 𝑖 ≤ 9 and 0 ≤ 𝑗 ≤ 9 and 𝑖 + 4 ∗ 𝑗 > 𝑖 ∗ 𝑗.
+  Hint: use flatMap and filter.
   */
 
 val a = (0 to 9).flatMap(x => (0 to 9).map { y => (x, y) } )
