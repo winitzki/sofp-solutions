@@ -6,20 +6,12 @@ Find all pairs i, j within (0, 1, ..., 9) such that i + 4 ∗ j > i ∗ j.
 Hint: use flatMap and filter.
   */
 
-val a = (0 to 9).sliding(2).toList
-val b = a.map{ case x => (x.apply(0) +  4 * x.apply(1)) }
-val c = a.map{ case x => (x.apply(0) * x.apply(1)) } 
+val a = (0 to 9).flatMap(x => (0 to 9).map { y => (x, y) } )
+val b = a.map{ case x => x._1 + 4 * x._2 }
+val c = a.map{ case x => x._1 * x._2 }
 val d = b.zip(c)
-// List((4,0), (9,2), (14,6), (19,12), (24,20), (29,30), (34,42), (39,56), (44,72))
-val e = d.map{ case x => if (x._1  > x._2) x }.filter(_ != ())
+val result = d.map{ case x => if (x._1  > x._2) x }.filter(_ != ())
 
-/** 
-scala> :load solution2.1.7.1_AR.scala
-Loading solution2.1.7.1_AR.scala...
-a: List[scala.collection.immutable.IndexedSeq[Int]] = List(Vector(0, 1), Vector(1, 2), Vector(2, 3), Vector(3, 4), Vector(4, 5), Vector(5, 6), Vector(6, 7), Vector(7, 8), Vector(8, 9))
-b: List[Int] = List(4, 9, 14, 19, 24, 29, 34, 39, 44)
-c: List[Int] = List(0, 2, 6, 12, 20, 30, 42, 56, 72)
-d: List[(Int, Int)] = List((4,0), (9,2), (14,6), (19,12), (24,20), (29,30), (34,42), (39,56), (44,72))
-warning: there was one deprecation warning; re-run with -deprecation for details
-e: List[Any] = List((4,0), (9,2), (14,6), (19,12), (24,20))
- */
+val expected = Vector((4,0), (8,0), (12,0), (16,0), (20,0), (24,0), (28,0), (32,0), (36,0), (1,0), (5,1), (9,2), (13,3), (17,4), (21,5), (25,6), (29,7), (33,8), (37,9), (2,0), (6,2), (10,4), (14,6), (18,8), (22,10), (26,12), (30,14), (34,16), (38,18), (3,0), (7,3), (11,6), (15,9), (19,12), (23,15), (27,18), (31,21), (35,24), (39,27), (4,0), (8,4), (12,8), (16,12), (20,16), (24,20), (28,24), (32,28), (36,32), (40,36), (5,0), (9,5), (13,10), (17,15), (21,20), (6,0), (10,6), (14,12), (7,0), (11,7), (15,14), (8,0), (12,8), (9,0), (13,9))
+
+assert(result == expected) 
