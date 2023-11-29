@@ -23,7 +23,7 @@ jobs:
           architecture: x64
           java-package: jdk
           java-version: "${{ matrix.java}}"
-      - run: "sbt -DJDK_VERSION=${{ matrix.java}} \"++${{ matrix.scala}} test\""
+      - run: "bash run_sbt.sh -DJDK_VERSION=${{ matrix.java}} \"++${{ matrix.scala}} test\""
     strategy:
       matrix:
         java:
@@ -52,7 +52,7 @@ jobs:
           architecture: x64
           java-package: jdk
           java-version: '17'
-      - run: sbt scalafmtCheckAll scalafmtSbtCheck
+      - run: bash reformat_all_code.sh
 name: build_and_test
 on:
   pull_request: {}

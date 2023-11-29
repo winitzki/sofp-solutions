@@ -11,7 +11,7 @@ val a:  List[Boolean]           = List(true, false, true)
 def selectTrueOperatorSyntax(names: List[String], flags: List[Boolean]): List[String] =
   names zip flags filter (_._2) map (_._1)
 
-selectTrueOperatorSyntax(names, a)
+assert(selectTrueOperatorSyntax(names, a) == List("Joe", "Mary"))
 
 // scala> :load solution2.1.7.3_as_function_SW.scala
 // Loading solution2.1.7.3_as_function_SW.scala...
