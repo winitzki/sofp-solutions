@@ -8,7 +8,11 @@ Solutions for each chapter is a submodule in this project.
 
 Common code may be put into the `common` submodule.
 
-Files under `worksheets/` may be arbitrary Scala code, not made into a test. SBT will ignore those files.
+Files under `worksheets/` may be arbitrary Scala code, not made into a test.
+
+## Verifying worksheets
+
+Run the command `bash run_sbt.sh test` in order to verify all solutions. This will create temporary solution files in each chapter.
 
 # Code formatting
 
