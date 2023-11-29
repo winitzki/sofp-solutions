@@ -52,7 +52,7 @@ jobs:
           architecture: x64
           java-package: jdk
           java-version: '17'
-      - run: bash reformat_all_code.sh
+      - run: sbt scalafmtCheckAll scalafmtSbtCheck
 name: build_and_test
 on:
   pull_request: {}
