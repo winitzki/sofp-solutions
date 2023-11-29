@@ -53,7 +53,7 @@ in  GithubActions.Workflow::{
               # [ GithubActions.steps.actions/setup-java
                     { java-version = "\${{ matrix.java}}" }
                 , GithubActions.steps.run
-                    { run = "sbt -DJDK_VERSION=\${{ matrix.java}} \"++\${{ matrix.scala}} test\"" }
+                    { run = "bash run_sbt.sh -DJDK_VERSION=\${{ matrix.java}} \"++\${{ matrix.scala}} test\"" }
                 ]
           }
         }

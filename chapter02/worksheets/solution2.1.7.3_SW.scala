@@ -11,3 +11,4 @@ val b: List[(String, Boolean)] = names.zip(a)
 val c: List[(String, Boolean)] = b.filter { case (x, y) => y }
 val d: List[String]            = c.map { case (x, y) => x }
 
+assert(d == List("Joe", "Mary"))

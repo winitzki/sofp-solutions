@@ -23,7 +23,7 @@ jobs:
           architecture: x64
           java-package: jdk
           java-version: "${{ matrix.java}}"
-      - run: "sbt -DJDK_VERSION=${{ matrix.java}} \"++${{ matrix.scala}} test\""
+      - run: "bash run_sbt.sh -DJDK_VERSION=${{ matrix.java}} \"++${{ matrix.scala}} test\""
     strategy:
       matrix:
         java:
