@@ -2,7 +2,7 @@
 
 /** 
 Exercise 2.1.7.1
-  Find all integer pairs 𝑖, 𝑗 where 0 ≤ 𝑖 ≤ 9 and 0 ≤ 𝑗 ≤ 9 and 𝑖 + 4 ∗ 𝑗 > 𝑖 ∗ 𝑗.
+  Find all integer pairs 𝑖, 𝑗 where 0 ≤ 𝑖,j ≤ 9 and 𝑖 + 4 ∗ 𝑗 > 𝑖 ∗ 𝑗.
   Hint: use flatMap and filter.
   */
 
