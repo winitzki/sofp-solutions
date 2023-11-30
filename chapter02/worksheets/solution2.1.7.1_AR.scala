@@ -7,8 +7,8 @@ Exercise 2.1.7.1
   */
 
 val a = (0 to 9).flatMap(x => (0 to 9).map { y => (x, y) } )
-val b = a.map{ case x => x._1 + 4 * x._2 }
-val c = a.map{ case x => x._1 * x._2 }
+val b = a.map{ case (x, y) => x + 4 * y }
+val c = a.map{ case (x, y) => x * y }
 val d = b.zip(c)
 val result = d.filter { case (x, y) => x > y }
 
