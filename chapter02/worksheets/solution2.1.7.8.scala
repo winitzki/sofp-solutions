@@ -24,6 +24,6 @@ def myMapping[P,Q](p: Seq[P], q: Seq[Q]): Map[P, Q] = {
 
 val result = myMapping(Seq( Set(true), Set(true, false), Set() ), Seq( 1.0, 2.0, 3.0))
 
-val expected: Map[scala.collection.immutable.Set[_ <: Boolean],Double] = Map(Set(true) -> 1.0, Set(true, false) -> 2.0, Set() -> 3.0)
+val expected: Map[Set[Boolean],Double] = Map(Set(true) -> 1.0, Set(true, false) -> 2.0, Set() -> 3.0)
 
 assert(result == expected)
