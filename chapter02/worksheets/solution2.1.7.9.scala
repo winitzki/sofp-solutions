@@ -10,7 +10,7 @@ the output must be Map("apple" -> 10, "pear" -> 3, "lemon" -> 2).
 Hint: use groupBy, map, sum.
  */
 
-val a =  Seq(("pear", 2), ("apple", 2), ("apple", 6), ("pear", 1), ("lemon", 4), ("apple", 2), ("apple", 2))
+val a: Seq[(String, Int)] =  Seq(("pear", 2), ("apple", 2), ("apple", 6), ("pear", 1), ("lemon", 4), ("apple", 2), ("apple", 2))
 
 val b =  a.groupBy(s => s._1)
 
@@ -18,14 +18,12 @@ val c = b.map{ case (x,y) => y}
 
 val e = c.map{ k=>k.map{ case x=>x._1} }.map{ x=>x(0)}
 
-// val f = e.map{ case x => x.replaceAll("(\\w+)", "\"$1\"")}
+val f = e.map{ case x => x.replaceAll("(\\w+)", "\"$1\"")}
 
 val g = c.map{ k=>k.map{ case x=>x._2}.sum }
 
-val result = e.zip(g).toMap
+val result = f.zip(g).toMap
 
-val expected = Map("pear" -> 3, "apple" -> 12, "lemon" -> 4)
+val expected = Map("\"pear\"" -> 3, "\"apple\"" -> 12, "\"lemon\"" -> 4)
 
 assert(result == expected)
-
-
