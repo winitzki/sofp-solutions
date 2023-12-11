@@ -14,6 +14,7 @@ Hint: use groupBy, map, sum.
 def totalCount(arg: Seq[(String, Int)]) = {
   // val a: Seq[(String, Int)] =  Seq(("pear", 2), ("apple", 2), ("apple", 6), ("pear", 1), ("lemon", 4), ("apple", 2), ("apple", 2))
   arg.groupBy(s => s._1).map { case (x, y) => (x, y.map(_._2).sum) }
+}
 
 // scala> totalCount(Seq(("pear", 2), ("apple", 2), ("apple", 6), ("pear", 1), ("lemon", 4), ("apple", 2), ("apple", 2)))
 // res37: scala.collection.immutable.Map[String,Int] = Map(pear -> 3, apple -> 12, lemon -> 4)
