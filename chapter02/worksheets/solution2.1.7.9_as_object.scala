@@ -11,21 +11,20 @@ the output must be Map("apple" -> 10, "pear" -> 3, "lemon" -> 2).
 Hint: use groupBy, map, sum.
  */
 
-object TotalCount
-{
-  def main(args: Array[String])
-    {
-      val a = args(0)
-      def totalCount(a: Seq[(String, Int)]): Map[String, Int] = {
-        a.groupBy(s => s._1).map { case (x, y) => (x, y.map(_._2).sum) }
-      }
-    }
+object TotalCount {
+  def totalCount(a: Seq[(String, Int)]): Map[String, Int] = {
+    a.groupBy(s => s._1).map { case (x, y) => (x, y.map(_._2).sum) }
+  }
 }
 
-val result = totalCount(Seq(("apple", 2), ("pear", 3), ("apple", 5), ("lemon", 2), ("apple", 3)))
-val expected = Map("apple" -> 10, "pear" -> 3, "lemon" -> 2)
+val result =  TotalCount.totalCount(Seq(("apple", 2), ("pear", 3), ("apple", 5), ("lemon", 2), ("apple", 3)))
+
+val expected =  Map("apple" -> 10, "pear" -> 3, "lemon" -> 2)
 
 assert(result == expected) 
 
-// scala> totalCount(Seq(("apple", 2), ("pear", 3), ("apple", 5), ("lemon", 2), ("apple", 3)))
-// res41: scala.collection.immutable.Map[String,Int] = Map(pear -> 3, apple -> 10, lemon -> 2)
+// scala> :load solution2.1.7.9_as_object_ohne_main.scala
+// Loading solution2.1.7.9_as_object_ohne_main.scala...
+// defined object TotalCount
+// result: Map[String,Int] = Map(pear -> 3, apple -> 10, lemon -> 2)
+// expected: scala.collection.immutable.Map[String,Int] = Map(apple -> 10, pear -> 3, lemon -> 2)
