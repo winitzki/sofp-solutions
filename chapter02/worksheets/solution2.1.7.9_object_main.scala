@@ -24,6 +24,7 @@ object TotalCount {
   }
 }
 
+TotalCount.main(Array())
 
 
 // scala> :load solution2.1.7.9_as_object_ohne_main.scala
@@ -31,3 +32,6 @@ object TotalCount {
 // defined object TotalCount
 // result: Map[String,Int] = Map(pear -> 3, apple -> 10, lemon -> 2)
 // expected: scala.collection.immutable.Map[String,Int] = Map(apple -> 10, pear -> 3, lemon -> 2)
+
+// $ scala solution2.1.7.9_object_main.scala
+// result: Map(pear -> 3, apple -> 10, lemon -> 2)
