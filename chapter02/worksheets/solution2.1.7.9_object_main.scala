@@ -24,7 +24,7 @@ object TotalCount {
   }
 }
 
-TotalCount.main(Array())
+// TotalCount.main(Array())
 
 
 // scala> :load solution2.1.7.9_as_object_ohne_main.scala
