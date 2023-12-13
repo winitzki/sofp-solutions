@@ -19,7 +19,7 @@ object TotalCount {
     val expected =  Map("apple" -> 10, "pear" -> 3, "lemon" -> 2)
     val result =  this.totalCount(Seq(("apple", 2), ("pear", 3), ("apple", 5), ("lemon", 2), ("apple", 3)))
     assert(result == expected)
-    if (result == expected) println("result: %s".format(result))
+    if (result == expected) println("\nsolution2.1.7.9_object_main result: %s".format(result))
 
   }
 }
