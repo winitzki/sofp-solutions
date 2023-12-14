@@ -13,7 +13,7 @@ val expected = Vector((0,0,1), (0,0,2), (0,0,3), (0,0,4), (0,0,5), (0,0,6), (0,0
 // That function is unused for now
 case class Solution2_1_7_2_AR_check(i: Int, k: Int, j: Int) {
   val ergebnis: Boolean = (i +  4 * k + 9 * j) > (i * j * k)
-  printf("ergebnis: %s ", ergebnis)
+  printf("\nergebnis: %s ", ergebnis)
 }
 
 // Check the value of expected
