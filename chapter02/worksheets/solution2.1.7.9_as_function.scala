@@ -18,3 +18,9 @@ def totalCount(arg: Seq[(String, Int)]) = {
 
 // scala> totalCount(Seq(("pear", 2), ("apple", 2), ("apple", 6), ("pear", 1), ("lemon", 4), ("apple", 2), ("apple", 2)))
 // res37: scala.collection.immutable.Map[String,Int] = Map(pear -> 3, apple -> 12, lemon -> 4)
+
+val result = totalCount(Seq(("apple", 2), ("pear", 3), ("apple", 5), ("lemon", 2), ("apple", 3)))
+
+val expected = Map("apple" -> 10, "pear" -> 3, "lemon" -> 2)
+
+assert(result == expected) 
