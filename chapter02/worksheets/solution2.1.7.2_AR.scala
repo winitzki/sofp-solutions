@@ -19,6 +19,6 @@ case class Solution2_1_7_2_AR_check(i: Int, k: Int, j: Int) {
 // Check the value of expected
 val check_solution2_1_7_2_AR = expected.map({case (i, j, k) => ((i +  4 * k + 9 * j), (i * j * k)) }).filter{ case (x, y) => x <  y }
 
-printf("\ncheck_solution2_1_7_2_AR: this should be empty: %s", check_solution2_1_7_2_AR)
+printf("check_solution2_1_7_2_AR: this should be empty: %s\n", check_solution2_1_7_2_AR)
 
 assert(result == expected) 
