@@ -16,9 +16,9 @@ val b =  a.groupBy(s => s._1)
 
 val c = b.map{ case (x,y) => y}
 
-val e = c.map{ k=>k.map{ case x=>x._1} }.map{ x=>x(0)}
+val e = c.map{ k=>k.map(x=>x._1) }.map{ x=>x(0)}
 
-val g = c.map{ k=>k.map{ case x=>x._2}.sum }
+val g = c.map{ k=>k.map(x=>x._2).sum }
 
 val result = e.zip(g).toMap
 
