@@ -19,13 +19,3 @@ object MyFactorial {
 
 MyFactorial.main(Array())
 
-// scala> :load solution1.1.1.1_as_function_AR.scala
-// Loading solution1.1.1.1_as_function_AR.scala...
-// defined object MyFactorial
-// result: 3628800
-
-// $ scalac solution1.1.1.1_as_function_AR.scala
-// solution1.1.1.1_as_function_AR.scala:33: error: expected class or object definition
-// MyFactorial.main(Array())
-// ^
-// one error found
