@@ -9,12 +9,23 @@ object MyFactorial {
   def myFactorial(a: Int): Int = {
     (1 to a).foldRight(1)(_ * _)
   }
+  def main(args: Array[String]) {
+    val expected = 3628800
+    val result =  this.myFactorial(10)
+    println("result: %s".format(result))
+    assert(result == expected)
+  }
 }
 
-val result =  MyFactorial.myFactorial(10)
-val expected = 3628800
+MyFactorial.main(Array())
 
-println("result: %s".format(result))
+// scala> :load solution1.1.1.1_as_function_AR.scala
+// Loading solution1.1.1.1_as_function_AR.scala...
+// defined object MyFactorial
+// result: 3628800
 
-val expected = 3628800
-assert(result == expected) 
+// $ scalac solution1.1.1.1_as_function_AR.scala
+// solution1.1.1.1_as_function_AR.scala:33: error: expected class or object definition
+// MyFactorial.main(Array())
+// ^
+// one error found
