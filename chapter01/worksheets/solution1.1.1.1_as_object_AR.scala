@@ -19,3 +19,7 @@ object MyFactorial {
 
 MyFactorial.main(Array())
 
+// scala> :load solution1.1.1.1_as_object_AR.scala
+// Loading solution1.1.1.1_as_object_AR.scala...
+// defined object MyFactorial
+// result: 3628800
