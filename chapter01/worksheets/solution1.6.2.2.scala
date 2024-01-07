@@ -13,6 +13,8 @@ val r =  p.map(x => q.filter(y => (x != y) && (x % y == 0)) )
 val s = p zip r
 val t = s.map{ case (x, y) => (x, y.length) } 
 val result = t.filter{ case (x, y) => 3 == y }.map{ case (x, y) => x }
+val expected =  Vector(16, 81, 625)
+assert(result == expected) 
 
 print("3-factor result among n ∈ [1, ..., 1000]: %s\n".format(result))
 
