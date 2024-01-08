@@ -1,4 +1,4 @@
-2/** author: Andreas Röhler */
+/** author: Andreas Röhler */
 
 /**
   Exercise 1.6.2.5
