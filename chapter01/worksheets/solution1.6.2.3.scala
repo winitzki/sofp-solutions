@@ -17,7 +17,10 @@ def is3Factor(n: Int): Boolean = {
 }
 
 def nestedIs3Factor(f: (Int => Boolean)): List[Int] = {
-  (1 to 1000).toList.filter(x => f(x))
+  (1 to 1000).filter(x => f(x)).toList
 }
 
-nestedIs3Factor(is3Factor)
+val result = nestedIs3Factor(is3Factor)
+val expected = Vector(16, 81, 625)
+
+assert(result == expected) 
