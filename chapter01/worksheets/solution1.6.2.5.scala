@@ -15,7 +15,7 @@
 def normalize(a: List[Double]): List[Double] = {
 
   val b =  a.map(k => k.abs).max
-  if (b == 0) a else a.map(_ / 4) 
+  if (b == 0) a else a.map(_ / b) 
 }
 
 val result = normalize(List(1.0, -4.0, 2.0))
