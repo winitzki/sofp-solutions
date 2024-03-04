@@ -5,6 +5,14 @@ Implement a function toPairs that converts a sequence of type
 Seq[A] to a sequence of pairs, Seq[(A, A)], by putting together the adjacent elements pairwise. If the initial sequence has an odd number of elements, a given
 default value of type A is used to fill the last pair. The required type signature and
 an example test:
+
+def toPairs[A](xs: Seq[A], default: A): Seq[(A, A)] = ???
+
+scala> toPairs(Seq(1, 2, 3, 4, 5, 6), -1)
+res0: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
+
+scala> toPairs(Seq("a", "b", "c"), "<nothing>")
+res1: Seq[(String, String)] = List((a,b), (c,<nothing>))
   */
 
 object ToPairsObject {
@@ -36,3 +44,11 @@ object ToPairsObject {
     println("a: %s".format(a))
   }
 }
+
+val result = toPairs(Seq(1, 2, 3, 4, 5, 6), -1)
+val expected: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
+assert(result == expected) 
+
+val a = toPairs(Seq("a", "b", "c"), "<nothing>")
+val b: Seq[(String, String)] = List(("a","b"), ("c","<nothing>"))
+assert(a == b) 
