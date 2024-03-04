@@ -8,7 +8,7 @@ an example test:
   */
 
 object ToPairsObject {
-  def toPairs[A](xs: Seq[A], default: A): Seq[(A, A)] = {
+  private def toPairs[A](xs: Seq[A], default: A): Seq[(A, A)] = {
     type Acc = (Seq[(A, A)], Seq[A])
 
     // Type alias, for brevity.
@@ -36,3 +36,4 @@ object ToPairsObject {
     println("a: %s".format(a))
   }
 }
+

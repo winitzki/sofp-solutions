@@ -1,3 +1,11 @@
+/** 
+Example 2.2.5.6
+
+Implement a function toPairs that converts a sequence of type
+Seq[A] to a sequence of pairs, Seq[(A, A)], by putting together the adjacent elements pairwise. If the initial sequence has an odd number of elements, a given
+default value of type A is used to fill the last pair. The required type signature and
+an example test:
+  */
 
 object ToPairsObject {
   def toPairs[A](xs: Seq[A], default: A): Seq[(A, A)] = {
