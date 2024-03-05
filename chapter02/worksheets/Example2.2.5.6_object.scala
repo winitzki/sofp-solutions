@@ -40,10 +40,18 @@ object ToPairsObject {
   }
 }
 
-val result = toPairs(Seq(1, 2, 3, 4, 5, 6), -1)
+val result = ToPairsObject.toPairs(Seq(1, 2, 3, 4, 5, 6), -1)
 val expected: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
 assert(result == expected) 
 
-val a = toPairs(Seq("a", "b", "c"), "<nothing>")
+val a = ToPairsObject.toPairs(Seq("a", "b", "c"), "<nothing>")
 val b: Seq[(String, String)] = List(("a","b"), ("c","<nothing>"))
 assert(a == b) 
+
+// scala> :load Example2.2.5.6_object.scala
+// :load Example2.2.5.6_object.scala
+// // defined object ToPairsObject
+// val result: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
+// val expected: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
+// val a: Seq[(String, String)] = List((a,b), (c,<nothing>))
+// val b: Seq[(String, String)] = List((a,b), (c,<nothing>))

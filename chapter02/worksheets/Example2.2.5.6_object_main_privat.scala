@@ -40,16 +40,15 @@ object ToPairsObject {
 
   }
   def main(args: Array[String]): Unit = {
-    val result = ToPairsObject.toPairs(Seq(1, 2, 3), 4)
-    assert(result == expected) 
+    val result = toPairs(Seq(1, 2, 3, 4, 5, 6), -1)
+    val expected: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
+    assert(result == expected)
+
+    val a = toPairs(Seq("a", "b", "c"), "<nothing>")
+    val b: Seq[(String, String)] = List(("a","b"), ("c","<nothing>"))
+    assert(a == b)
     println("a: %s".format(a))
   }
+
 }
 
-val result = toPairs(Seq(1, 2, 3, 4, 5, 6), -1)
-val expected: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
-assert(result == expected) 
-
-val a = toPairs(Seq("a", "b", "c"), "<nothing>")
-val b: Seq[(String, String)] = List(("a","b"), ("c","<nothing>"))
-assert(a == b) 

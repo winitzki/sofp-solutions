@@ -42,3 +42,10 @@ val a = toPairs(Seq("a", "b", "c"), "<nothing>")
 val b: Seq[(String, String)] = List(("a","b"), ("c","<nothing>"))
 assert(a == b) 
 
+// scala> :load Example2.2.5.6.scala
+// :load Example2.2.5.6.scala
+// def toPairs[A](xs: Seq[A], default: A): Seq[(A, A)]
+// val result: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
+// val expected: Seq[(Int, Int)] = List((1,2), (3,4), (5,6))
+// val a: Seq[(String, String)] = List((a,b), (c,<nothing>))
+// val b: Seq[(String, String)] = List((a,b), (c,<nothing>))
