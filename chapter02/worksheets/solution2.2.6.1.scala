@@ -12,7 +12,7 @@ Hint: This can be done with foldLeft or with flatMap.
 
 def fromPairs[A](xs: Seq[(A, A)]): Seq[A] = { 
   var b: Seq[A] = List()
-  xs.map( x => (b = b :+ x(0) :+ x(1)))
+  xs.map((x: (A, A)) => (b = b :+ x(0) :+ x(1)))
   b
 }
 
