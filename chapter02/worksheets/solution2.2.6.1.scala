@@ -16,7 +16,13 @@ def fromPairs[A](xs: Seq[(A, A)]): Seq[A] = {
   b
 }
 
-val result = fromPairsString(List(("a","b"), ("c","<nothing>"))).tail
+val result = fromPairs(List(("a","b"), ("c","<nothing>")))
 val expected = List("a", "b", "c", "<nothing>")
 
 assert(result == expected)
+
+// scala> :load solution2.2.6.1.scala
+// :load solution2.2.6.1.scala
+// def fromPairs[A](xs: Seq[(A, A)]): Seq[A]
+// val result: Seq[String] = List(a, b, c, <nothing>)
+// val expected: List[String] = List(a, b, c, <nothing>)
