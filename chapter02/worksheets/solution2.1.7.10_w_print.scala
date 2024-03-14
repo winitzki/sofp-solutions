@@ -20,25 +20,17 @@ object LargestTree {
     printf("largestTree %s:\n", x)
     x
   }
-  def main(args: Array[String]) {
+  def main(args: Array[String]) = {
     val expected = Seq(List(50, 30, 10), List(100), List(200, 20, 2))
     val result =  this.largestTree(Seq(List(50, 30, 10), List(100), List(200, 20, 2)))
     assert(result == expected)
     if (result == expected) println("solution2.1.7.10_object_main result: %s\n".format(result))
-
   }
 }
 
 LargestTree.main(Array())
 
-// scala> LargestTree.largestTree(Seq(List(50, 30, 10, 90), List(100), List(200, 20, 2, 66)))
-// largestTree List(List(90, 50, 30), List(100), List(200, 66, 20)):
-// res7: Seq[List[Int]] = List(List(90, 50, 30), List(100), List(200, 66, 20))
-
-// s$ scala solution2.1.7.10_w_print.scala
-// ...solution2.1.7.10_w_print.scala:32: warning: Script has a main object but statement is disallowed
-// LargestTree.main(Array())
-//                 ^
-// one warning found
+// scala> :load solution2.1.7.10_w_print.scala
+// :load solution2.1.7.10_w_print.scala
 // largestTree List(List(50, 30, 10), List(100), List(200, 20, 2)):
 // solution2.1.7.10_object_main result: List(List(50, 30, 10), List(100), List(200, 20, 2))
