@@ -23,7 +23,7 @@ val result = fromPairs(List(("a","b"), ("c","<nothing>")))
 val expected = List("a", "b", "c", "<nothing>")
 assert(result == expected)
 
-val a: Seq[Int] = this.fromPairs(List((1, 2), (3, 4)))
+val a: Seq[Int] = fromPairs(List((1, 2), (3, 4)))
 val c: Seq[Int] = List(1, 2, 3, 4)
 assert(a == c)
 
