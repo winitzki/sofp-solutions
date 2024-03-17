@@ -25,11 +25,11 @@ object FromPairs {
     xs.foldLeft(init){ (x, y) => x :+ y._1 :+ y._2 }
   }
     def main(args: Array[String]) = {
-      val result: Seq[String] = this.fromPairs(List(("a","b"), ("c","<nothing>")))
+      val result: Seq[String] = fromPairs(List(("a","b"), ("c","<nothing>")))
       val expected: Seq[String] = List("a", "b", "c", "<nothing>")
       println("result: %s".format(result))
         assert(result == expected)
-      val a: Seq[Int] = this.fromPairs(List((1, 2), (3, 4)))
+      val a: Seq[Int] = fromPairs(List((1, 2), (3, 4)))
       val b: Seq[Int] = List(1, 2, 3, 4)
       println("a: %s".format(a))
         assert(a == b)
