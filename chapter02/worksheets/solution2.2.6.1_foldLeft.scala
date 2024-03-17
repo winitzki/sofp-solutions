@@ -27,10 +27,10 @@ object FromPairs {
     def main(args: Array[String]) = {
       val result: Seq[String] = fromPairs(List(("a","b"), ("c","<nothing>")))
       val expected: Seq[String] = List("a", "b", "c", "<nothing>")
-      println("result: %s".format(result))
-        assert(result == expected)
       val a: Seq[Int] = fromPairs(List((1, 2), (3, 4)))
       val b: Seq[Int] = List(1, 2, 3, 4)
+      println("result: %s".format(result))
+        assert(result == expected)
       println("a: %s".format(a))
         assert(a == b)
     }
