@@ -29,7 +29,9 @@ jobs:
         java:
           - '17.0.9'
         scala:
-          - '2.13.11'
+          - '2.13.13'
+          - '3.3.3'
+          - '3.4.0'
   checks:
     name: Check formatting
     runs-on: ubuntu-latest
