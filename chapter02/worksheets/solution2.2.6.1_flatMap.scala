@@ -19,7 +19,10 @@
 
 object FromPairs {
   def fromPairs[A](xs: Seq[(A, A)]): Seq[A] = {
-    xs.flatMap { x => x.toList }
+    
+    xs.flatMap{ case (x1, x2) => List(x1, x2) }
+
+    
   }
   def main(args: Array[String]) = {
     val result: Seq[String] = fromPairs(List(("a","b"), ("c","<nothing>")))
