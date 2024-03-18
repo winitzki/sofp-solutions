@@ -13,7 +13,7 @@ that function.
 def is3Factor(n: Int): Boolean = {
   val q =  (2 to n-1)
   val r = q.filter(y => (n != y) && (n % y == 0))
-   (r.length == 3)
+  r.length == 3
 }
 
 def nestedIs3Factor(f: (Int => Boolean)): List[Int] = {

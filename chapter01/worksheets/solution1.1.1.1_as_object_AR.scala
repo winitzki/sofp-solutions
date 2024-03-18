@@ -9,7 +9,7 @@ object MyFactorial {
   def myFactorial(a: Int): Int = {
     (1 to a).foldRight(1)(_ * _)
   }
-  def main(args: Array[String]) {
+  def main(args: Array[String]) = {
     val expected = 3628800
     val result =  this.myFactorial(10)
     println("result: %s".format(result))

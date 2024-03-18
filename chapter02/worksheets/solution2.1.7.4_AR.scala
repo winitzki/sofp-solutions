@@ -13,7 +13,7 @@ val a = Seq[Int](1, 3, 2, 4)
 val b = a.last
 val c: Seq[(Int, Boolean)] = Seq((b, false))
 // val c = List(b, false)
-val d: Seq[(Int, Boolean)] = Seq[Int](1, 3, 2, 4).sliding(2).toList.map{ case List(x, y) => if (x < y) (x, true) else (x, false)}
+val d: Seq[(Int, Boolean)] = Seq[Int](1, 3, 2, 4).sliding(2).toList.map{ case Seq(x, y) => if (x < y) (x, true) else (x, false)}
 val result = d ++ c
 
 val expected: Seq[(Int, Boolean)] = List((1,true), (3,false), (2,true), (4,false))

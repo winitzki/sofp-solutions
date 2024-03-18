@@ -5,7 +5,7 @@ Given two sequences p: Seq[String] and q: Seq[Boolean] of equal length, compute 
 Seq[String] with those elements of p for which the corresponding element of q is true.
 Hint: use zip, map, filter. */ 
 
-val result = Seq("Joe", "Bob", "Mary").zip(Seq(true, false, true)).map { case (x, y) => if (y == true) x }.filter(_ != (())).map{ case x => x.toString }
+val result = Seq("Joe", "Bob", "Mary").zip(Seq(true, false, true)).map { case (x, y) => if (y == true) x else () }.filter(_ != (())).map{ case x => x.toString }
 assert(result == List("Joe", "Mary"))
 
 // scala> :load solution2.1.7.3_AR.scala

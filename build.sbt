@@ -1,5 +1,5 @@
-val scala2V = "2.13.11"
-val scala3V = "3.3.1"
+val scala2V = "2.13.13"
+val scala3V = "3.3.3"
 val scalaV  = scala2V
 
 val munitTest      = "org.scalameta" %% "munit" % "0.7.29" % Test
