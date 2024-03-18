@@ -15,7 +15,7 @@ object TotalCount {
   def totalCount(a: Seq[(String, Int)]): Map[String, Int] = {
     a.groupBy(s => s._1).map { case (x, y) => (x, y.map(_._2).sum) }
   }
-  def main(args: Array[String]) {
+  def main(args: Array[String]) = {
     val expected =  Map("apple" -> 10, "pear" -> 3, "lemon" -> 2)
     val result =  this.totalCount(Seq(("apple", 2), ("pear", 3), ("apple", 5), ("lemon", 2), ("apple", 3)))
     assert(result == expected)

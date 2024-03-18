@@ -12,7 +12,7 @@
 def followedByGreater(a: Seq[Int]): Seq[(Int, Boolean)] = {
   val b = a.last
   val c: Seq[(Int, Boolean)] = Seq((b, false))
-  val d: Seq[(Int, Boolean)] = a.sliding(2).toList.map{ case List(x, y) => if (x < y) (x, true) else (x, false)}
+  val d: Seq[(Int, Boolean)] = a.sliding(2).toList.map{ case Seq(x, y) => if (x < y) (x, true) else (x, false)}
   val e = d ++ c
   e
 }

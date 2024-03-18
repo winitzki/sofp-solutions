@@ -23,7 +23,7 @@ class Exercises_2_1_7 extends FunSuite {
     val names: List[String]        = List("Joe", "Bob", "Mary")
     val a: List[Boolean]           = List(true, false, true)
     val b: List[(String, Boolean)] = names.zip(a)
-    val c: List[Any]               = b.map { case (x, y) => if (y == true) x }
+    val c: List[Any]               = b.map { case (x, y) => if (y == true) x else () }
     val d: List[Any]               = c.filter(_ != (()))
     expect(d == List("Joe", "Mary"))
   }

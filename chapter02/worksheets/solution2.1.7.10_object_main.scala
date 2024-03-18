@@ -18,7 +18,7 @@ object LargestTree {
   def largestTree(a: Seq[List[Int]]): Seq[List[Int]] = {
     a.map{ k=>k.sortBy(k=>(-k))}.map{ k => k.take(3) }
   }
-  def main(args: Array[String]) {
+  def main(args: Array[String]) = {
     val expected = Seq(List(50, 30, 10), List(100), List(200, 20, 2))
     val result =  this.largestTree(Seq(List(50, 30, 10), List(100), List(200, 20, 2)))
     assert(result == expected)

@@ -7,7 +7,7 @@ let matrix =
 -- "8.0.382",
 -- "11.0.21",
  "17.0.9",
- ], scala = [ "2.13.11" ] }
+ ], scala = [ "2.13.13", "3.3.3", "3.4.0", ] }
 
 let setup =
       [ GithubActions.steps.actions/checkout // { `with` = Some (toMap { submodules = "true" }) }
