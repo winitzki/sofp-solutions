@@ -28,9 +28,11 @@ object Flatten {
 
     val a = flatten(Seq(Seq("a","b"), Seq(), (Seq("c","<nothing>"))))
     val b: Seq[String] = List("a", "b", "c", "<nothing>")
+    println("a: %s".format(a))
+    println("b: %s".format(b))
+
     assert(a == b)
   }
-  Flatten.main(Array())
 }
 
 Flatten.main(Array())
@@ -39,4 +41,6 @@ Flatten.main(Array())
 // :load solution2.2.6.2_main.scala
 // result: List(1, 2, 3, 4)
 // expected: List(1, 2, 3, 4)
+// a: List(a, b, c, <nothing>)
+// b: List(a, b, c, <nothing>)
 // // defined object Flatten
