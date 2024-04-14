@@ -17,7 +17,7 @@ def filterMap[A, B](xs: Seq[A])(pred: A => Boolean)(f: A => B): Seq[B] = {
 }
 
 val result =  filterMap(Seq(1, 2, 3, 4)) { x => x > 2 } { x => x * 10 }
-val expected =  Seq[Int] = List(30, 40)
+val expected: Seq[Int] = List(30, 40)
 assert(result == expected)
 
 // scala> filterMap(Seq(1, 2, 3, 4)) { x => x > 2 } { x => x * 10 }
