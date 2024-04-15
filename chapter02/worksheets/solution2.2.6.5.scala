@@ -26,6 +26,10 @@ assert(result == expected)
 val a =  Seq(Seq(1, 2, 3), List(4, 5, 6), List(7))
 val b =  byLength(Seq(1, 2, 3, 4, 5, 6, 7), 3)
 assert(a == b)
+val c =  Seq(Seq(1, 2))
+val d =  byLength(Seq(1, 2), 3)
+assert(c == d)
+
 
 // scala> :load solution2.2.6.5.scala
 // :load solution2.2.6.5.scala
