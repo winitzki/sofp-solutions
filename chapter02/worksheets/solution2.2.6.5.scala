@@ -14,7 +14,7 @@
  */
 
 def byLength[A](xs: Seq[A], maxLength: Int): Seq[Seq[A]] = {
-  if (xs.length) <= maxLength then
+  if (xs.length) <= maxLength 
     Seq(xs)
   else
     Seq(xs.take(maxLength)) ++ byLength(xs.drop(maxLength), maxLength)
