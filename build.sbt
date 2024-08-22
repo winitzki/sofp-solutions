@@ -1,7 +1,8 @@
 val scala2V      = "2.13.13"
 val scala3V      = "3.3.3"
 val scalaV       = scala2V
-val scalaOptions = Seq("-Xsource:3", "-Xfuture") // See https://youtrack.jetbrains.com/issue/SCL-18990/Support-for-some-Scala-3-syntactic-constructs-in-Scala-2-with-Xsource3
+val scalaOptions =
+  Seq("-Xsource:3", "-Xfuture") // See https://youtrack.jetbrains.com/issue/SCL-18990/Support-for-some-Scala-3-syntactic-constructs-in-Scala-2-with-Xsource3
 
 val munitTest      = "org.scalameta" %% "munit" % "0.7.29" % Test
 def munitFramework = new TestFramework("munit.Framework")
