@@ -1,6 +1,8 @@
-val scala2V = "2.13.13"
-val scala3V = "3.3.3"
-val scalaV  = scala2V
+val scala2V      = "2.13.13"
+val scala3V      = "3.3.3"
+val scalaV       = scala2V
+val scalaOptions =
+  Seq("-Xsource:3", "-Xfuture") // See https://youtrack.jetbrains.com/issue/SCL-18990/Support-for-some-Scala-3-syntactic-constructs-in-Scala-2-with-Xsource3
 
 val munitTest      = "org.scalameta" %% "munit" % "0.7.29" % Test
 def munitFramework = new TestFramework("munit.Framework")
@@ -15,9 +17,11 @@ lazy val chapter01 = (project in file("chapter01"))
   .settings(
     // Exclude all files under worksheets/ from compilation.
     unmanagedSources / excludeFilter ~= {
-      _ || new FileFilter { def accept(f: File) = ".*/worksheets/.*".r.pattern.matcher(f.getAbsolutePath).matches }
+      _ || new FileFilter {
+        def accept(f: File) = ".*/worksheets/.*".r.pattern.matcher(f.getAbsolutePath).matches
+      }
     },
-    scalacOptions ++= Seq("-Xsource:3.3.3"),
+    scalacOptions ++= scalaOptions,
     scalaVersion             := scalaV,
     crossScalaVersions       := Seq(scala2V, scala3V),
     Test / parallelExecution := true,
@@ -35,7 +39,7 @@ lazy val chapter02 = (project in file("chapter02"))
         def accept(f: File) = ".*/worksheets/.*".r.pattern.matcher(f.getAbsolutePath).matches
       }
     },
-    scalacOptions ++= Seq("-Xsource:3.3.3"),
+    scalacOptions ++= scalaOptions,
     scalaVersion             := scalaV,
     crossScalaVersions       := Seq(scala2V, scala3V),
     Test / parallelExecution := true,
@@ -46,6 +50,7 @@ lazy val chapter02 = (project in file("chapter02"))
   ).dependsOn(common)
 
 lazy val common = (project in file("common")).settings(
+  scalacOptions ++= scalaOptions,
   scalaVersion             := scalaV,
   crossScalaVersions       := Seq(scala2V, scala3V),
   Test / parallelExecution := true,
