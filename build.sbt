@@ -17,7 +17,7 @@ lazy val chapter01 = (project in file("chapter01"))
     unmanagedSources / excludeFilter ~= {
       _ || new FileFilter { def accept(f: File) = ".*/worksheets/.*".r.pattern.matcher(f.getAbsolutePath).matches }
     },
-    scalacOptions ++= Seq("-Xsource", "3.3.3"),
+    scalacOptions ++= Seq("-Xsource:3.3.3"),
     scalaVersion             := scalaV,
     crossScalaVersions       := Seq(scala2V, scala3V),
     Test / parallelExecution := true,
@@ -35,7 +35,7 @@ lazy val chapter02 = (project in file("chapter02"))
         def accept(f: File) = ".*/worksheets/.*".r.pattern.matcher(f.getAbsolutePath).matches
       }
     },
-    scalacOptions ++= Seq("-Xsource", "3.3.3"),
+    scalacOptions ++= Seq("-Xsource:3.3.3"),
     scalaVersion             := scalaV,
     crossScalaVersions       := Seq(scala2V, scala3V),
     Test / parallelExecution := true,
