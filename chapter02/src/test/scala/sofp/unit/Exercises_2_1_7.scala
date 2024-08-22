@@ -5,6 +5,8 @@ import munit.FunSuite
 
 class Exercises_2_1_7 extends FunSuite {
 
+  val _ = if 1 == 1 then 0 else 1
+
   test("Exercise 2.1.7.1") {
 
     val allPairs      =
