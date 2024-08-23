@@ -9,8 +9,8 @@
   */
 
 def collatzSequence(n: Int, xs: List[Int] = List(0)): List[Int] =
-  if xs.head == 1 then xs.init
-  else if n % 2 == 0 then
+  if (xs.head == 1) xs.init
+  else if (n % 2 == 0)
        collatzSequence(n/2, n +: xs)
   else collatzSequence (n * 3 + 1, n +: xs)
     
