@@ -13,7 +13,7 @@
 def zipWithIndex[A](xs: Seq[A]): Seq[(A, Int)] = {
   type Acc = Seq[(A, Int)]
   def init: Acc = Seq((xs.head, -1))
-  xs.foldLeft(init) { (x, y) => (y, x(0)._2 + 1) +: x }.reverse.tail
+  xs.foldLeft(init) { (x, y) => x :+ (y, x.last._2 + 1) }.tail
 }
 
 val expected: Seq[(String, Int)] = List(("a", 0), ("b", 1), ("c", 2), ("d", 3))
