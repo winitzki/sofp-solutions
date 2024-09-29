@@ -11,15 +11,6 @@
 
   def cubes(n: Int): Stream[Int] = ???
 
-  scala> cubes(123).take(10).toList
-  res0: List[Int] = List(123, 36, 243, 99, 1458, 702, 351, 153, 153, 153)
-
-  scala> cubes(2).take(10).toList
-  res1: List[Int] = List(2, 8, 512, 134, 92, 737, 713, 371, 371, 371)
-
-  scala> cubes(4).take(10).toList
-  res2: List[Int] = List(4, 64, 280, 520, 133, 55, 250, 133, 55, 250)
-
   def cubesReach1(n: Int): Boolean = ???
 
   scala> cubesReach1(10)
@@ -36,16 +27,8 @@ def digitsOf(n: Int): Seq[Int] = {
     .toList.reverse
 }
 
-def digitsFSum(x: Int)(f: Int => Int): Int = {
-  // digitsOf(x).map{ x => f(x)}.foldLeft(0)(_ + _)
-  digitsOf(x).map{ x => f(x)}.sum
-}
-
 def digitsListSum(x: Int, xs: Seq[Int] = Seq(), f: (Int => Int)): Seq[Int] = {
-  // digitsOf(x).map{ x => f(x)}.foldLeft(0)(_ + _)
-  // var xs: Seq[Int] = Seq()
   val a: Int = digitsOf(x).map{ x => f(x)}.sum
-  println(s"a: ${a}")
   if (xs.contains(a)) xs.reverse
   else digitsListSum(a, a +: xs, f)
 }
@@ -58,6 +41,11 @@ def cubesReach1(x: Int): Boolean = {
   val a = Cubes.cubes(x)
     a.length == 1
 }
+
+
+cubes(123)
+cubes(10)
+cubes(4)
 
 val result =  cubesReach1(10)
 val expected = true
