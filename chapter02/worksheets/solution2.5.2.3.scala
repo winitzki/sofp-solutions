@@ -38,8 +38,8 @@ def cubes(n: Int): Seq[Int] = {
 }
 
 def cubesReach1(x: Int): Boolean = {
-  val a = Cubes.cubes(x)
-    a.length == 1
+  val a = cubes(x)
+    a.length == 1 && a(0) == 1
 }
 
 
