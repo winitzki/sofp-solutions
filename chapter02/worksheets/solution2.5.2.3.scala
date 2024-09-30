@@ -29,7 +29,9 @@ def digitsOf(n: Int): Seq[Int] = {
 
 def digitsListSum(x: Int, xs: Seq[Int] = Seq(), f: (Int => Int)): Seq[Int] = {
   val a: Int = digitsOf(x).map{ x => f(x)}.sum
-  if (xs.contains(a)) xs.reverse
+  if (xs.contains(a))
+    if (a == 1) xs
+    else xs.reverse
   else digitsListSum(a, a +: xs, f)
 }
 
@@ -39,7 +41,7 @@ def cubes(n: Int): Seq[Int] = {
 
 def cubesReach1(x: Int): Boolean = {
   val a = cubes(x)
-    a.length == 1 && a(0) == 1
+    a(0) == 1
 }
 
 
@@ -55,3 +57,10 @@ val result2 =  cubesReach1(4)
 val expected2 = false
 assert(result2 == expected2)
 
+assert ( cubesReach1(20) == false )
+assert ( cubesReach1(50) == false )
+assert ( cubesReach1(100) == true )
+
+assert ( cubesReach1(112) == true )
+assert ( cubesReach1(114) == false )
+assert ( cubesReach1(778) == true )
