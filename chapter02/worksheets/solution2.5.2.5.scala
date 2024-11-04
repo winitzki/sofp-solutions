@@ -15,11 +15,11 @@
   Hint: use foldLeft and flatMap.
   */
 
-def prodSetIntern(b: Set[Set[Int]] = Set(Set.empty), symbols: List[Int] = List.empty): Set[Set[Int]] = {
+def prodSetIntern(b: Set[Set[Int]] = Set(Set.empty), symbols: Set[Int] = Set.empty): Set[Set[Int]] = {
   val c =  b.toList
-  if (c.tail.isEmpty) (c.head).map{ x => (x +: symbols).toSet }
+  if (c.tail.isEmpty) (c.head).map{ x => Set(x) ++ symbols }
   else
-    c.head.flatMap{ x => prodSetIntern(c.tail.toSet, (x +: symbols)) }
+    c.head.flatMap{ x => prodSetIntern(c.tail.toSet, Set(x) ++ symbols) }
 }
 
 
@@ -33,7 +33,7 @@ assert(result == expected)
 
 // scala> :load solution2.5.2.5.scala
 // :load solution2.5.2.5.scala
-// def prodSetIntern(b: Set[Set[Int]], symbols: List[Int]): Set[Set[Int]]
+// def prodSetIntern(b: Set[Set[Int]], symbols: Set[Int]): Set[Set[Int]]
 // def prodSet(a: Set[Set[Int]]): Set[Set[Int]]
 // val result: Set[Set[Int]] = Set(Set(6, 4, 3, 1), Set(6, 5, 3, 1), Set(6, 4, 3, 2), Set(6, 5, 3, 2))
 // val expected: Set[Set[Int]] = Set(Set(1, 3, 4, 6), Set(1, 3, 5, 6), Set(2, 3, 4, 6), Set(2, 3, 5, 6))
