@@ -16,12 +16,10 @@
   */
 
 def prodSetIntern(b: Set[Set[Int]] = Set(Set.empty), symbols: Set[Int] = Set.empty): Set[Set[Int]] = {
-  val c =  b.toList
-  if (c.tail.isEmpty) (c.head).map{ x => Set(x) ++ symbols }
+  if (b.tail.isEmpty) (b.head).map{ x => Set(x) ++ symbols }
   else
-    c.head.flatMap{ x => prodSetIntern(c.tail.toSet, Set(x) ++ symbols) }
+    b.head.flatMap{ x => prodSetIntern(b.tail.toSet, Set(x) ++ symbols) }
 }
-
 
 def prodSet(a: Set[Set[Int]] = Set(Set.empty)): Set[Set[Int]] = {
   prodSetIntern(a)
