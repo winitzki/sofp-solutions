@@ -19,9 +19,10 @@ def pairsIntern(goal: Int, xs: Array[Int], res: Seq[(Int, Int)] = Seq((0, 0))): 
     val a = xs.filter(_ + xs.head == goal)
     if (a.isEmpty)
       pairsIntern(goal, xs.tail, res)
-    else
+    else {
       val b = (xs.head, a(0))
       val c = b +: res
+    }
   pairsIntern(goal, xs.tail, c)
 }
 
