@@ -2,8 +2,10 @@
 *RCS*
 *.class
 *.log
+chapter02/worksheets/solution2.5.2.5_foldLeft.scala
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+auspack/
 befehle.org
 hs_err_pid*
 target
