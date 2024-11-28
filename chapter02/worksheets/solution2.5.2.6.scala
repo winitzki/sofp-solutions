@@ -13,7 +13,7 @@
   res0: Set[(Int, Int)] = Set((2,8), (4,6), (5,5))
   */
 
-def pairsIntern(goal: Int, xs: Array[Int], res: Seq[(Int, Int)] = Seq((0, 0))): Seq[(Int, Int)] =
+def pairsIntern(goal: Int, xs: Array[Int], res: Seq[(Int, Int)] = Seq((0, 0))): Seq[(Int, Int)] = { 
   if (xs.isEmpty) res.reverse.tail
   else
     val a = xs.filter(_ + xs.head == goal)
@@ -22,8 +22,9 @@ def pairsIntern(goal: Int, xs: Array[Int], res: Seq[(Int, Int)] = Seq((0, 0))): 
     else
       val b = (xs.head, a(0))
       val c = b +: res
-      pairsIntern(goal, xs.tail, c)
- 
+  pairsIntern(goal, xs.tail, c)
+}
+
 def pairs(goal: Int, xs: Array[Int]): Set[(Int, Int)] = {
   pairsIntern(goal, xs).toSet
 }
