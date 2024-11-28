@@ -22,10 +22,9 @@ def pairsIntern(goal: Int, xs: Array[Int], res: Seq[(Int, Int)] = Seq((0, 0))): 
     else {
       val b = (xs.head, a(0))
       val c = b +: res
-
+      pairsIntern(goal, xs.tail, c)
     }
   }
-  pairsIntern(goal, xs.tail, c)
 }
 
 def pairs(goal: Int, xs: Array[Int]): Set[(Int, Int)] = {
