@@ -22,7 +22,7 @@ val expected: Int = 54321
 assert(result == expected) 
 
 def isPalindrome(n: Int): Boolean = {
-  n.toString.reverse.toInt == n
+  revDigits(n) == n
 }
 
 val iPexpected: Boolean = false
