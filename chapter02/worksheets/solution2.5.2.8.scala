@@ -31,7 +31,7 @@ assert(iPresult == iPexpected)
 
 val iPexpected2: Boolean = true
 val iPresult2 = isPalindrome(123321)
-assert(iPresult2 =/ iPexpected2) 
+assert(iPresult2 == iPexpected2) 
 
 // scala> :load solution2.5.2.8.scala
 // :load solution2.5.2.8.scala
