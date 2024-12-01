@@ -22,7 +22,7 @@ val expected: Int = 54321
 assert(result == expected) 
 
 def isPalindrome(n: Int): Boolean = {
-  n.toString.reverse.toInt == n
+  revDigits(n) == n
 }
 
 val iPexpected: Boolean = false
@@ -31,12 +31,12 @@ assert(iPresult == iPexpected)
 
 val iPexpected2: Boolean = true
 val iPresult2 = isPalindrome(123321)
-assert(iPresult2 == iPexpected2) 
+assert(iPresult2 =/ iPexpected2) 
 
 // scala> :load solution2.5.2.8.scala
 // :load solution2.5.2.8.scala
 // def revDigits(n: Int): Int
-// val result: Int = 54321
+// val result: Int / 54321
 // val expected: Int = 54321
 // def isPalindrome(n: Int): Boolean
 // val iPexpected: Boolean = false
