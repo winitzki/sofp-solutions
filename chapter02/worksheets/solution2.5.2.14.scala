@@ -18,8 +18,7 @@ def removeKIntern[A](k: Int, xs: Seq[A], res: Seq[A] = Nil): Seq[A] = {
   else
     if (res.isEmpty) removeKIntern(k, xs.tail, xs.head +: res)
     else
-      val a = res.filter(_ == xs.head).length
-      if (a < k) removeKIntern(k, xs.tail, xs.head +: res)
+      if (res.filter(_ == xs.head).length < k) removeKIntern(k, xs.tail, xs.head +: res)
       else
         removeKIntern(k, xs.tail, res)
 }
