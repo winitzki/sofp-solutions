@@ -1,6 +1,7 @@
 let GithubActions =
       https://regadas.dev/github-actions-dhall/package.dhall
-        sha256:71df44892a17abca817cfb35e2612d117f7fceec55114a6eb76b65a7eea4e6f4
+--        sha256:71df44892a17abca817cfb35e2612d117f7fceec55114a6eb76b65a7eea4e6f4
+     sha256:56b2d746cf5bf75b66276f5adaa057201bbe1ebf29836f4e35390e2a2bb68965
 
 let matrix =
       toMap { java = [
@@ -10,7 +11,9 @@ let matrix =
  ], scala = [ "2.13.13", "3.3.3", "3.4.0", ] }
 
 let setup =
-      [ GithubActions.steps.actions/checkout // { `with` = Some (toMap { submodules = "true" }) }
+      [ GithubActions.steps.actions/checkout
+ GithubActions.actions/checkout::{ submodules = Some "true" }
+ -- { `with` = Some (toMap { submodules = "true" }) }
       , GithubActions.steps.actions/cache
           { path =
               ''
@@ -39,6 +42,7 @@ in  GithubActions.Workflow::{
           , steps =
                 setup
               # [ GithubActions.steps.actions/setup-java { java-version = "17" }
+-- ???               , GithubActions.steps.
                 , GithubActions.steps.run
                     { run = "sbt scalafmtCheckAll scalafmtSbtCheck" }
                 ]
