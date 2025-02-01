@@ -54,6 +54,8 @@ jobs:
           architecture: x64
           java-package: jdk
           java-version: '17'
+      - name: Setup sbt launcher
+        uses: sbt/setup-sbt@v1
       - run: sbt scalafmtCheckAll scalafmtSbtCheck
 name: build_and_test
 on:
