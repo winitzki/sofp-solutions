@@ -16,15 +16,29 @@
 
   Hint: use dynamic programming and foldLeft.
  */
-            
-def maxsub(xs: Seq[Double], res: Seq[Double] = Seq.empty, max: Double = Double.NegativeInfinity): Seq[Double] = { 
-  if (xs.isEmpty) res.reverse
+
+def sumFromfirstSeq(x: (Seq[Double], Seq[Double])): Double = {
+  x._1.sum
+}
+
+def firstSeq(x: (Seq[Double], Seq[Double])): Seq[Double] = {
+  x._1
+}
+
+def maxsubIntern(xs: Seq[Double]):(Seq[Double], Seq[Double]) = { 
+  xs.foldLeft(Seq.empty[Double], Seq.empty[Double]){ case ((maxList, allList), y) =>
+      { if (maxList.sum < (y +: allList).sum) { 
+        (y +: allList, y +: allList) } 
+        else (maxList, (y +: allList))
+      }
+  }
+}
+
+def maxsub(xs: Seq[Double], res: Seq[Double] = Seq.empty, max: Double = Double.NegativeInfinity): Seq[Double] = {
+  if (xs.isEmpty) res.reverse                                                     
   else {
-    var newRes: Seq[Double] = Seq.empty
-    xs.foldLeft(newRes){ (x, y) => { if (newRes.sum < (y +: x).sum) { (newRes = y +: x); y +: x}
-                                     else y +: x} }
-    if (newRes.sum <= max) maxsub(xs.tail, res, max)
-    else maxsub(xs.tail, newRes, newRes.sum)
+    if (sumFromfirstSeq(maxsubIntern(xs)) <= max) maxsub(xs.tail, res, max)
+    else maxsub(xs.tail, firstSeq(maxsubIntern(xs)), (sumFromfirstSeq(maxsubIntern(xs))))
   }
 }
 
